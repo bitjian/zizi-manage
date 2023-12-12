@@ -3,7 +3,6 @@ import { viteMockServe } from 'vite-plugin-mock';
 import createVuePlugin from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import svgLoader from 'vite-svg-loader';
-
 import path from 'path';
 
 const CWD = process.cwd();

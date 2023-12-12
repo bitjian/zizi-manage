@@ -6,7 +6,7 @@ const Api = {
   DelAllShop: '/excel-find/delAllShop',
 };
 
-export function getList(params) {
+export function getList(params: any) {
   return request.post<ListResult>({
     url: Api.BaseList,
     data: { ...params },

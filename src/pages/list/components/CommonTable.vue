@@ -2,7 +2,7 @@
   <div class="list-common-table">
     <t-row justify="start" class="mb-20">
       <t-upload
-        action="http://localhost:3000/api/excel-find/uploadExcel"
+        :action="`${host}/api/excel-find/uploadExcel`"
         :tips="tips"
         :before-upload="beforeUpload"
         :disabled="uploadDisable"
@@ -99,7 +99,12 @@ import { getList, delAllData } from '@/api/list';
 import { useSettingStore } from '@/store';
 import { prefix } from '@/config/global';
 import { downExcel } from '@/utils/xlsx';
+import proxy from '@/config/proxy';
 
+const env = import.meta.env.MODE || 'development';
+
+// 如果是mock模式 或 没启用直连代理 就不配置host 会走本地Mock拦截 或 Vite 代理
+const host = env === 'mock' || !proxy.isRequestProxy ? '' : proxy[env].host;
 const tips = '大小在 5M 内';
 const store = useSettingStore();
 

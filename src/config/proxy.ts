@@ -2,7 +2,7 @@ export default {
   isRequestProxy: true,
   development: {
     // 开发环境接口请求
-    host: 'https://www.bitjian.cn',
+    host: 'http://localhost:3000',
     // 开发环境 cdn 路径
     cdn: '',
   },

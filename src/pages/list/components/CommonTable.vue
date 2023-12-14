@@ -228,6 +228,7 @@ const onReset = (val) => {
   formData.value = { ...searchForm };
 };
 const onSubmit = (val) => {
+  pagination.value = { ...pagination.value, defaultCurrent: 1 };
   fetchData();
 };
 const rehandlePageChange = (pageInfo: PageInfo) => {
